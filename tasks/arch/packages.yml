@@ -1,0 +1,14 @@
+---
+- name: "Upgrade Packages"
+  pacman:
+    update_cache: yes
+    upgrade: yes
+
+- name: "Install packages"
+  pacman:
+    name: "{{ pacman_installed_packages }}"
+    state: present
+
+- name: "Uninstall packages"
+  homebrew_cask:
+    name: "{{ pacman_uninstalled_packages }}"

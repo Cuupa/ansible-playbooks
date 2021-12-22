@@ -1,0 +1,69 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: false
+configure_terminal: false
+configure_osx: true
+
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: false
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+# - 'App Store'
+dockitems_persist:
+  - name: "Google Chrome"
+    path: "/Applications/Google Chrome.app/"
+    pos: 2
+  - name: "Google Chrome"
+    path: "/Applications/1Password 7.app/"
+    pos: 3
+
+configure_sudoers: false
+sudoers_custom_config: ''
+# Example:
+# sudoers_custom_config: |
+#   # Allow users in admin group to use sudo with no password.
+#   %admin ALL=(ALL) NOPASSWD: ALL
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - autoconf
+  - bash-completion
+  - docker
+  - ffmpeg
+  - git
+  - htop
+  - sqlite
+  - maven
+  - nano
+  - nmap
+  - ssh-copy-id
+  - openssl
+  - wget
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - 1password
+  - atom
+  - caffeine
+  - camunda-modeler
+  - cyberduck
+  - chromedriver
+  - discord
+#  - google-chrome
+  - handbrake
+  - jetbrains-toolbox
+  - obs
+  - spotify
+  - steam
+  - vlc
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []

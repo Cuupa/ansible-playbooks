@@ -1,0 +1,20 @@
+---
+- hosts: macos
+  become: no
+
+  vars_files:
+    - conf/osx.config.yml
+
+  tasks:
+    - import_tasks: tasks/osx/packages.yml
+      tags: [packages]
+
+- hosts: arch
+  become: yes
+
+  vars_files:
+    - conf/arch.config.yml
+
+  tasks:
+    - import_tasks: tasks/arch/packages.yml
+      tags: [packages]

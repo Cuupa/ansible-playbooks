@@ -1,0 +1,14 @@
+---
+#- name: "Upgrade homebrew"
+#  homebrew:
+#    update_homebrew: yes
+#    upgrade_all: yes
+
+- name: "Install brews"
+  homebrew:
+    name: "{{ homebrew_installed_packages }}"
+    state: present
+
+- name: "Install casks"
+  homebrew_cask:
+    name: "{{ homebrew_cask_apps }}"
