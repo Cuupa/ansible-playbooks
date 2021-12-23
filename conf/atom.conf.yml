@@ -1,0 +1,12 @@
+---
+atom_installed_packages:
+  - minimap
+  - atom-beautify
+  - highlight-selected
+  - file-icons
+  - pigments
+  - color-picker
+  - autoclose-html
+  - blame
+  - language-ansible
+  - auto-update-packages

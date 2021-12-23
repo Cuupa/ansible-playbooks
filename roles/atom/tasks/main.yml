@@ -1,0 +1,3 @@
+- name: "Install atom.io Packages"
+  ansible.builtin.include_tasks: atom-add.yml
+  loop: "{{ atom_installed_packages }}"

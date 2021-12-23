@@ -1,8 +1,13 @@
 - hosts: arch
   become: yes
 
+  roles:
+    - role: atom
+      tags: ['atom']
+
   vars_files:
     - conf/arch.config.yml
+    - conf/atom.conf.yml
 
   tasks:
     - import_tasks: tasks/arch/packages.yml

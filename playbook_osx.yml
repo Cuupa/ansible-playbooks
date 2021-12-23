@@ -8,9 +8,12 @@
     - role: dock
       when: configure_dock
       tags: ['dock']
+    - role: atom
+      tags: ['atom']
 
   vars_files:
     - conf/osx.config.yml
+    - conf/atom.conf.yml
 
   tasks:
     - import_tasks: tasks/osx/packages.yml
