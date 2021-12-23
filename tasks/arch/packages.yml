@@ -1,10 +1,12 @@
 ---
 - name: "Upgrade Packages"
+  become: yes
   pacman:
     update_cache: yes
     upgrade: yes
 
 - name: "Install Packages"
+  become: yes
   pacman:
     name: "{{ item.name | default(item) }}"
     install_options: "{{ item.install_options | default(omit) }}"
@@ -12,6 +14,7 @@
   loop: "{{ pacman_installed_packages }}"
 
 - name: "Uninstall Packages"
+  become: yes
   pacman:
     name: "{{ item.name | default(item) }}"
     install_options: "{{ item.install_options | default(omit) }}"

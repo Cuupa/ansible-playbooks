@@ -1,5 +1,4 @@
 - hosts: arch
-  become: yes
 
   roles:
     - role: atom

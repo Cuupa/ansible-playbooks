@@ -1,2 +1,13 @@
+- name: Create temporary download directory
+  ansible.builtin.file:
+    path: "{{ downloads }}"
+    state: directory
+
+- name: Download Latte template.
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/Cuupa/ansible-playbooks/main/files/arch/latte-dock/Default.layout.latte
+    dest: "{{ downloads }}"
+
 - name: Configure Latte-Dock
-  command: echo "latte-dock --import-layout files/arch/latte-dock/Default.layout.latte"
+  ansible.builtin.command:
+    cmd: "latte-dock --import-layout {{ downloads }}/Default.layout.latte"
