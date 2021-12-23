@@ -1,7 +1,7 @@
 ---
 - name: "See if {{ item }} is in the Dock."
   ansible.builtin.command:
-    cmd: dockutil --find '{{ item }}'
+    cmd: "{{ dockutil_install_path }} --find '{{ item }}'"
   register: dockitem_exists
   changed_when: false
   failed_when: >
@@ -11,6 +11,6 @@
 
 - name: Ensure Dock item {{ item }} is removed.
   ansible.builtin.command:
-    cmd: dockutil --remove '{{ item }}'
-#  when: dockitem_exists.rc  == 0
+    cmd: "{{ dockutil_install_path }} --remove '{{ item }}'"
+  when: dockitem_exists.rc  == 0
   tags: ['dock']

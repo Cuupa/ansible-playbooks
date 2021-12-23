@@ -7,18 +7,22 @@ configure_osx: true
 
 homebrew: true
 
+dockutil_install_path: /usr/local/bin/dockutil
+
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
 dockitems_remove:
   - Launchpad
   - TV
   - Podcasts
-  - Messages
+  # - Messages
+  # Need to be localized ..
+  - Nachrichten
   - Mail
-  - Maps
+  - Karten
   - FaceTime
-  - Calendar
-  - Contacts
+  - Kalender
+  - Kontakte
 # - 'App Store'
 dockitems_persist:
   - name: "Terminal"
@@ -51,6 +55,9 @@ dockitems_persist:
   - name: "Steam"
     path: "/Applications/Steam.app"
     pos: 11
+  - name: "OBS"
+    path: "/Application/OBS.app"
+    pos: 12
 
 
 configure_sudoers: false
