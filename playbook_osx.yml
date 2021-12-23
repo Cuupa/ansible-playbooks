@@ -1,0 +1,17 @@
+---
+- hosts: macos
+  become: no
+
+  roles:
+    - role: homebrew
+      tags: ['homebrew']
+    - role: dock
+      when: configure_dock
+      tags: ['dock']
+
+  vars_files:
+    - conf/osx.config.yml
+
+  tasks:
+    - import_tasks: tasks/osx/packages.yml
+      tags: [packages]

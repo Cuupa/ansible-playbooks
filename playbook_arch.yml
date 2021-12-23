@@ -1,0 +1,12 @@
+- hosts: arch
+  become: yes
+
+  vars_files:
+    - conf/arch.config.yml
+
+  tasks:
+    - import_tasks: tasks/arch/packages.yml
+      tags: [packages]
+
+    - import_tasks: tasks/arch/configure_packages.yml
+      tags: [packages]

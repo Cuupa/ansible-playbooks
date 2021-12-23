@@ -1,0 +1,2 @@
+- name: Configure Latte-Dock
+  command: echo "latte-dock --import-layout files/arch/latte-dock/Default.layout.latte"

@@ -4,6 +4,8 @@ downloads: ~/.ansible-downloads/
 configure_dotfiles: false
 configure_terminal: false
 
+homebrew: false
+
 configure_sudoers: false
 sudoers_custom_config: ''
 # Example:
@@ -13,7 +15,6 @@ sudoers_custom_config: ''
 
 pacman_installed_packages:
   # - ansible # Installed via Pip.
-  - 1password
   - atom
   - bash-completion
   - camunda-modeler
@@ -21,9 +22,12 @@ pacman_installed_packages:
   - discord
   - docker
   - google-chrome
+  - gufw
+  - jdk-openjdk
   - handbrake
   - htop
   - ffmpeg
+  - filelight
   - git
   - htop
   - latte-dock
@@ -31,11 +35,29 @@ pacman_installed_packages:
   - maven
   - nano
   - nmap
-  - ssh-copy-id
   - obs-studio
   - openssl
+  - piper
   - spotify
   - steam-manjaro
   - synology-drive-client
+  - virtualbox
   - vlc
   - wget
+
+pacman_uninstalled_packages:
+    - audacity
+    - etcher
+    - fbida
+    - guetzli
+    - kdeconnect
+    - scenarist
+    - tomcat9
+    - yubikey-manager
+    - yubikey-personalization
+
+pamac_installed_packages:
+  - 1password
+
+snap_installed_packages:
+  - Czkawka
