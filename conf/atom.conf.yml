@@ -9,4 +9,3 @@ atom_installed_packages:
   - autoclose-html
   - blame
   - language-ansible
-  - auto-update-packages
