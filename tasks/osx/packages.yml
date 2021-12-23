@@ -1,14 +1,8 @@
 ---
-#- name: "Upgrade homebrew"
-#  homebrew:
-#    update_homebrew: yes
-#    upgrade_all: yes
-
-- name: "Install brews"
-  homebrew:
-    name: "{{ homebrew_installed_packages }}"
-    state: present
-
-- name: "Install casks"
-  homebrew_cask:
-    name: "{{ homebrew_cask_apps }}"
+- name: Install global Composer packages.
+  composer:
+    command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
+    arguments: "{{ item.name | default(item) }} {{ item.version | default('@stable') }}"
+    # Ansible 2.4 supports `global_command` making `working_dir` optional.
+    working_dir: "{{ lookup('env', 'COMPOSER_HOME') | default('~/.composer', true) }}"
+  loop: "{{ composer_packages }}"

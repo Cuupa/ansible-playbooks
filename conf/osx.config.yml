@@ -17,7 +17,7 @@ dockitems_persist:
   - name: "Google Chrome"
     path: "/Applications/Google Chrome.app/"
     pos: 2
-  - name: "Google Chrome"
+  - name: "1Password"
     path: "/Applications/1Password 7.app/"
     pos: 3
 

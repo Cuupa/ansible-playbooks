@@ -2,6 +2,14 @@
 - hosts: macos
   become: no
 
+  roles:
+    #- role: elliotweiser.osx-command-line-tools
+    - role: homebrew
+      tags: ['homebrew']
+    - role: dock
+      when: configure_dock
+      tags: ['dock']
+
   vars_files:
     - conf/osx.config.yml
 
