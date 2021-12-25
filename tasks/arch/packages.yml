@@ -13,6 +13,14 @@
     state: "{{ item.state | default('present') }}"
   loop: "{{ pacman_installed_packages }}"
 
+- name: "Install snap packages"
+  become: yes
+  pacman:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: "{{ item.state | default('present') }}"
+  loop: "{{ snap_installed_packages }}"
+
 - name: "Uninstall Packages"
   become: yes
   pacman:

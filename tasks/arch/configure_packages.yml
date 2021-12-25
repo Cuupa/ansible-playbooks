@@ -5,9 +5,9 @@
 
 - name: Download Latte template.
   ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/Cuupa/ansible-playbooks/main/files/arch/latte-dock/Default.layout.latte
+    url: {{ latte_github_template }}
     dest: "{{ downloads }}"
 
 - name: Configure Latte-Dock
   ansible.builtin.command:
-    cmd: "latte-dock --import-layout {{ downloads }}/Default.layout.latte"
+    cmd: "cp {{ downloads }}/Default.layout.latte {{ latte_config_folder }}"

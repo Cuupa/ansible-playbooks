@@ -1,6 +1,9 @@
 ---
 downloads: ~/.ansible-downloads/
 
+latte_github_template: https://raw.githubusercontent.com/Cuupa/ansible-playbooks/main/files/arch/latte-dock/Default.layout.latte
+latte_config_folder: ~/.config/latte/templates
+
 configure_dotfiles: false
 configure_terminal: false
 
