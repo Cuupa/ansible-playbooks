@@ -7,12 +7,21 @@
   when: ansible_facts['os_family'] == "Archlinux"
 
 - name: Ensure Atom is installed - Darwin
-  become: yes
   homebrew_cask:
     name: atom
     state: present
   when: ansible_facts['os_family'] == "Darwin"
 
 - name: "Install atom.io Packages"
-  ansible.builtin.include_tasks: atom-add.yml
+  ansible.builtin.command:
+    cmd: '/usr/local/bin/apm install {{item.name | default(item) }}'
+  tags: ['atom']
   loop: "{{ atom_installed_packages }}"
+  when: ansible_facts['os_family'] == "Darwin"
+
+- name: "Install atom.io Packages"
+  ansible.builtin.command:
+    cmd: 'apm install {{item.name | default(item) }}'
+  tags: ['atom']
+  loop: "{{ atom_installed_packages }}"
+  when: ansible_facts['os_family'] == "Archlinux"
