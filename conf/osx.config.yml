@@ -63,17 +63,22 @@ dockitems_persist:
     path: "/System/Applications/Photos.app"
     pos: 13
   - name: "Erinnerungen"
-    path: /System/Applications/Reminders.app"
+    path: "/System/Applications/Reminders.app"
     pos: 14
   - name: "Notizen"
-    path: /System/Applications/Notes.app"
+    path: "/System/Applications/Notes.app"
     pos: 14
   - name: "Musik"
-    path: /System/Applications/Music.app"
+    path: "/System/Applications/Music.app"
     pos: 15
   - name: "App Store"
-    path: /System/Applications/App Store.app"
+    path: "/System/Applications/App Store.app"
     pos: 16
+  - name: "OpenVPN Connect"
+    path: "/Applications/OpenVPN Connect.app"
+    path: 17
+  - name: "Systemeinstellungen"
+    path: "/System/Applications/System Preferences.app"
 
 configure_sudoers: false
 sudoers_custom_config: ''
