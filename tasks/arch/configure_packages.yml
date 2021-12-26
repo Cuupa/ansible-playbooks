@@ -11,3 +11,16 @@
 - name: Configure Latte-Dock
   ansible.builtin.command:
     cmd: "cp {{ downloads }}/Default.layout.latte {{ latte_config_folder }}"
+
+- name: Download Latte template.
+  ansible.builtin.get_url:
+    url: {{ plasma_github_icons }}
+    dest: "{{ downloads }}"
+
+- name: Extract Icons to folder
+  ansible.builtin.unarchive:
+    dest: {{ plasma_icons_folder }}
+
+- name: Configure Plasma-icons
+  ansible.builtin.command:
+    cmd: "/usr/lib/plasma-changeicons Mkos-big-sur"
