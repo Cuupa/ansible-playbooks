@@ -10,4 +10,4 @@
 
 - name: Configure Latte-Dock
   ansible.builtin.command:
-    cmd: "latte-dock --import-layout {{ downloads }}/Default.layout.latte"
+    cmd: "latte-dock --import-layout {{ downloads }}Default.layout.latte"
