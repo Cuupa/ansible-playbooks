@@ -1,0 +1,5 @@
+---
+- name: Install package {{ item.name | default(item) }}.
+  ansible.builtin.command: "apm install {{item.name | default(item) }}"
+  become: no
+  tags: ['atom']

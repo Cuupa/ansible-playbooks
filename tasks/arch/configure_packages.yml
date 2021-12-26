@@ -10,8 +10,4 @@
 
 - name: Configure Latte-Dock
   ansible.builtin.command:
-<<<<<<< HEAD
-    cmd: "latte-dock --import-layout {{ downloads }}Default.layout.latte"
-=======
     cmd: "cp {{ downloads }}/Default.layout.latte {{ latte_config_folder }}"
->>>>>>> refs/remotes/origin/main
