@@ -1,4 +1,4 @@
-- name: Create temporary download directory
+- name: Create temporary download directory.
   ansible.builtin.file:
     path: "{{ downloads }}"
     state: directory
@@ -8,19 +8,38 @@
     url: {{ latte_github_template }}
     dest: "{{ downloads }}"
 
-- name: Configure Latte-Dock
+- name: Configure Latte-Dock.
   ansible.builtin.command:
     cmd: "cp {{ downloads }}/Default.layout.latte {{ latte_config_folder }}"
 
-- name: Download Latte template.
+- name: Download Iconpack.
   ansible.builtin.get_url:
-    url: {{ plasma_github_icons }}
+    url: {{ plasma_icons_github }}
     dest: "{{ downloads }}"
 
-- name: Extract Icons to folder
+- name: Extract Icons to folder.
   ansible.builtin.unarchive:
+    src: {{ downloads }}Mkos-Big-Sur.tar.xz
     dest: {{ plasma_icons_folder }}
 
-- name: Configure Plasma-icons
+- name: Configure Plasma-icons.
   ansible.builtin.command:
     cmd: "/usr/lib/plasma-changeicons Mkos-big-sur"
+
+- name: Download Plasma-theme.
+  ansible.builtin.get_url:
+    url: {{ plasma_theme_github }}
+    dest: "{{ downloads }}"
+
+- name: Extract Theme to folder.
+  ansible.builtin.unarchive:
+    src: {{downloads }}McMojave.tar.gz
+    dest: {{ plasma_theme_folder }}
+
+- name: Set theme.
+  ansible.builtin.command:
+    cmd: "/usr/bin/lookandfeeltool -a {{ plasma_theme_folder }}com.github.vinceliuice.McMojave"
+
+- name: Restart Plasmashell
+  ansible.builtin.command:
+   cmd: "kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell"

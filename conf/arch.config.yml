@@ -4,8 +4,10 @@ downloads: ~/.ansible-downloads/
 latte_github_template: https://raw.githubusercontent.com/Cuupa/ansible-playbooks/main/files/arch/latte-dock/Default.layout.latte
 latte_config_folder: ~/.config/latte/
 
-plasma_github_icons: https://raw.githubusercontent.com/Cuupa/ansible-playbooks/main/files/arch/plasma/Mkos-Big-Sur.tar.xz
-plasma_icons_filder: ~/.local/share/icons
+plasma_icons_github: https://raw.githubusercontent.com/Cuupa/ansible-playbooks/main/files/arch/plasma/icons/Mkos-Big-Sur.tar.xz
+plasma_theme_github: https://raw.githubusercontent.com/Cuupa/ansible-playbooks/main/files/arch/plasma/theme/McMojave.tar.gz
+plasma_icons_folder: ~/.local/share/icons/
+plasma_theme_folder: ~/.local/share/plasma/desktoptheme/
 
 configure_dotfiles: false
 configure_terminal: false
