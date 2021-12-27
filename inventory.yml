@@ -1,0 +1,28 @@
+---
+macos:
+  hosts:
+    schleppbook.local:
+      ansible_host: schleppbook.local
+    schleppbook.thiel.cloud:
+      ansible_host: schleppbook.thiel.cloud
+  vars:
+    ansible_user: simon
+    ansible_connection: ssh
+
+arch:
+  hosts:
+    schlepptop.local:
+      ansible_hosts: schlepptop.local
+    schlepptop.thiel.cloud:
+      ansible_host: schlepptop.thiel.cloud
+  vars:
+    ansible_user: simon
+    ansible_connection: ssh
+
+windows:
+  hosts:
+    simon-pc.local:
+      ansible_host: simon-pc.local
+  vars:
+    ansible_user: Simon
+    ansible_connection: ssh

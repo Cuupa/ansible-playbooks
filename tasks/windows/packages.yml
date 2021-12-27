@@ -1,0 +1,13 @@
+---
+- name: "Upgrade Packages."
+  become: yes
+  ansible.windows.win_powershell:
+    script: choco upgrade all -y
+
+- name: "Install Packages."
+  become: yes
+  win_chocolatey:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: "{{ item.state | default('present') }}"
+  loop: "{{ chocolatey_installed_packages }}"

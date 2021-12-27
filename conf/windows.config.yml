@@ -1,0 +1,29 @@
+---
+downloads: ~/.ansible-downloads/
+
+chocolatey_installed_packages:
+  - 7zip
+  - chocolateygui
+  - chromedriver
+  - discord
+  - docker-cli
+  - epicgameslauncher
+  - f.lux
+  - cyberduck
+  - git
+  - GoogleChrome
+  - handbrake
+  - makemkv
+  - maven
+  - microsoft-windows-terminal
+  - nvidia-display-driver
+  - obs-studio
+  - openjdk
+  - openssh
+  - openvpn
+  - powertoys
+  - python3
+  - steam-client
+  - teamviewer
+  - virtualbox
+  - vlc

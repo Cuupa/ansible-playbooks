@@ -1,6 +1,5 @@
 ---
 - hosts: macos
-  become: no
 
   roles:
     - role: homebrew
@@ -13,7 +12,7 @@
 
   vars_files:
     - conf/osx.config.yml
-    - conf/atom.conf.yml
+    - conf/atom.config.yml
 
   tasks:
     - import_tasks: tasks/osx/packages.yml

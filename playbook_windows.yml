@@ -1,0 +1,10 @@
+---
+- hosts: windows
+
+  vars_files:
+    - conf/windows.config.yml
+    - conf/atom.conf.yml
+
+tasks:
+  - import_tasks: tasks/windows/packages.yml
+    tags: [packages]

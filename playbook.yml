@@ -1,3 +1,4 @@
 ---
 - import_playbook: playbook_arch.yml
 - import_playbook: playbook_osx.yml
+- import_playbook: playbook_windows.yml
