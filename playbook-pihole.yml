@@ -1,0 +1,10 @@
+---
+- hosts: pihole
+  roles:
+  - role: pihole
+      tags: ['pihole']
+  tasks:
+    - import_tasks: tasks/pihole/setup
+      tags: ['pihole']
+    - import_tasks: tasks/pihole/pihole.yml
+      tags: ['pihole']
