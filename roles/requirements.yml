@@ -1,4 +1,7 @@
 # requirements.yml
 
+- src: community.general.snap
+  version: 0.7.0
+
 - src: community.general.pamac
   version: 2.1.1
