@@ -29,3 +29,8 @@
         update: yes
       when: ansible_pkg_mgr == 'pamac'
 
+    - name: Update using Snap (Snapd)
+      community.general.snap:
+        name: '*'
+        state: latest
+      when: ansible_pkg_mgr == 'snap'
