@@ -1,7 +1,9 @@
 ---
 - name: Update System Packages
   hosts: all
-  become: yes  # Run tasks with elevated privileges
+  become: yes  
+  roles:
+    - linux
 
   tasks:
     - name: Update using APT (Debian/Ubuntu)
