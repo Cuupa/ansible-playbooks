@@ -2,8 +2,6 @@
 - name: Update System Packages
   hosts: all
   become: yes  
-  roles:
-    - linux
 
   tasks:
     - name: Update using APT (Debian/Ubuntu)
